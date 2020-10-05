@@ -63,13 +63,23 @@ class MarketScreen extends Component {
             <Text style={styles.items}>{item.economicCenter}</Text>
           </View>
         </View>
-        <FilledButton
-          title={"Order"}
-          style={styles.orderButton}
-          onPress={() => {
-            this.props.navigation.navigate("Order", item);
-          }}
-        />
+        <View style={{ flexDirection: "column", justifyContent: "center" }}>
+          <FilledButton
+            title={"Order"}
+            style={styles.orderButton}
+            onPress={() => {
+              this.props.navigation.navigate("Order", item);
+            }}
+          />
+          <View style={{ height: 5 }}></View>
+          <FilledButton
+            title={"Reviews"}
+            style={styles.orderButton}
+            onPress={() => {
+              this.props.navigation.navigate("Reviews", item);
+            }}
+          />
+        </View>
       </View>
     );
   };
@@ -175,8 +185,7 @@ const styles = StyleSheet.create({
   orderButton: {
     backgroundColor: "#19a119",
     height: 10,
-    width: 100,
-    marginTop: 15,
+    width: 107,
     marginRight: 4,
     alignSelf: "center",
   },
